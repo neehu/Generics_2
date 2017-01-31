@@ -5,10 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-class myCollection<T>
+class myCollection<Array>
 {
-    private T[] items;
-    private int Length;
+    public Array[] items;
+    public int Length;
     public myCollection()
     {
 
@@ -16,9 +16,9 @@ class myCollection<T>
     public myCollection(int Length)
     {
         this.Length = Length;
-        this.items = new T[Length];
+        this.items = new Array[Length];
     }
-    public T this[int index]
+    public Array this[int index]
     {
 
         get
@@ -55,28 +55,28 @@ namespace generic_class
         {
             myCollection<int> positiveIndexarray = new myCollection<int>(10);
             myCollection<int> negativeIndexarray = new myCollection<int>(10);
-            for (int count = 0; count <= 9; count++)
+            for (int index = 0; index <= 9; index++)
             {
-                positiveIndexarray[count] = count + 1;
+                positiveIndexarray[index] = index + 1;
             }
 
             Console.WriteLine("The output when index is positive");
 
-            for (int num = 0; num < 10; num++)
+            for (int index = 0; index < 10; index++)
             {
-                Console.WriteLine(positiveIndexarray[num]);
+                Console.WriteLine(positiveIndexarray[index]);
             }
 
             Console.WriteLine("The output when index is Negative");
 
-            for (int count = 0; count >= -9; count--)
+            for (int index = 0; index >= -9; index--)
             {
-                negativeIndexarray[count] = positiveIndexarray[System.Math.Abs(count)];
+                negativeIndexarray[index] = positiveIndexarray[System.Math.Abs(index)];
 
             }
-            for (int count = 0; count <= 9; count++)
+            for (int index = 0; index <= 9; index++)
             {
-                Console.WriteLine(negativeIndexarray[count]);
+                Console.WriteLine(negativeIndexarray[index]);
             }
 
             Console.ReadKey();
